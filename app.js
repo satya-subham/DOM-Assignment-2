@@ -16,11 +16,14 @@ button.addEventListener("click", (event) =>{
        <td>${userNumber.value}</td>
        <td id="remove"><button class="remove_btn">Remove</button></td>
     </tr>`
+
+    
 });
 
+let tableEl = document.querySelector('table');
 let newRows = document.querySelector('.new_rows')
 let removeBtn = document.querySelector('.remove_btn');
-removeBtn.addEventListener('click', (event) =>{
-    
-    alert('Tried!!!');
-})
+tableEl.addEventListener('click', (event) =>{
+    removeBtn = event.target;
+    removeBtn.closest('tr').remove();
+});
