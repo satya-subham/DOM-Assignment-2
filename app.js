@@ -12,7 +12,14 @@ button.addEventListener("click", (event) => {
     setTimeout(() => {
       document.querySelector(".empty").innerText = "";
     }, 2000);
-  } else {
+  }
+  else if(!userEmail.value.endsWith('@gmail.com')){
+    document.querySelector(".empty").innerText = "includes @ is missing";
+    setTimeout(() => {
+      document.querySelector(".empty").innerText = "";
+    }, 2000);
+  }
+  else {
     document.querySelector(".empty").innerText = "Data Inserted Successfully";
     document.querySelector(".empty").style.color = "green";
     setTimeout(() => {
@@ -29,9 +36,7 @@ button.addEventListener("click", (event) => {
     
   }
 
-  // if(userName.value == (/[0-9]/)){
-  //     alert('Invalid name')
-  // }
+  
 
   
 });
@@ -42,4 +47,9 @@ let removeBtn = document.querySelector(".remove_btn");
 tableEl.addEventListener("click", (event) => {
   removeBtn = event.target;
   removeBtn.closest("tr").remove();
+  document.querySelector(".empty").innerText = "Data Removed Successfully";
+    document.querySelector(".empty").style.color = "green";
+    setTimeout(() => {
+      document.querySelector(".empty").innerText = "";
+    }, 2000);
 });
